@@ -1,0 +1,74 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
+class MaterialSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('materiais')->insert([
+            [
+                'material' => 'Martelo Unha 29mm',
+                'aplicacao' => 'Fixação de pregos e pequenos demolições',
+                'unid_medida' => 'un',
+                'valor' => 45.90,
+                'data_val' => null, // Ferramentas não perecíveis não precisam de validade
+                'quan_estoque' => 15,
+                'qnt_minima' => 5,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'material' => 'Furadeira Impacto 600W',
+                'aplicacao' => 'Furação em concreto, madeira e metal',
+                'unid_medida' => 'un',
+                'valor' => 289.00,
+                'data_val' => null,
+                'quan_estoque' => 4,
+                'qnt_minima' => 2,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'material' => 'Cimento CP II-E-32 (50kg)',
+                'aplicacao' => 'Argamassa e concreto estrutural',
+                'unid_medida' => 'sc', // Saco
+                'valor' => 32.50,
+                'data_val' => Carbon::now()->addMonths(3), // Exemplo de validade
+                'quan_estoque' => 50,
+                'qnt_minima' => 10,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'material' => 'Trena Laser 40m',
+                'aplicacao' => 'Medição de distâncias e áreas',
+                'unid_medida' => 'un',
+                'valor' => 180.00,
+                'data_val' => null,
+                'quan_estoque' => 3,
+                'qnt_minima' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'material' => 'Disco de Corte Diamantado 110mm',
+                'aplicacao' => 'Corte de pisos, cerâmicas e concretos',
+                'unid_medida' => 'un',
+                'valor' => 25.00,
+                'data_val' => null,
+                'quan_estoque' => 8,
+                'qnt_minima' => 4,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+    }
+}
