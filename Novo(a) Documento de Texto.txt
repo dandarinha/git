@@ -29,12 +29,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <!-- Links de navegação (ajuste as rotas conforme seu projeto) -->
                     <li class="nav-item">
                         <a class="nav-link active" href="#"><i class="bi bi-house-door me-1"></i> Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-box-seam me-1"></i> Ferramentas</a>
+                        <a class="nav-link" href="#"><i class="bi bi-box-seam me-1"></i> Ferramentas / Materiais</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="bi bi-arrow-left-right me-1"></i> Empréstimos</a>
@@ -43,7 +42,18 @@
                         <a class="nav-link" href="#"><i class="bi bi-people me-1"></i> Colaboradores</a>
                     </li>
                 </ul>
-                <span class="navbar-text text-light">
+
+                <!-- Botões de Ação Rápida (Cadastros) -->
+                <div class="d-flex flex-wrap gap-2 me-lg-3 my-2 my-lg-0">
+                    <a href="#" class="btn btn-warning btn-sm fw-bold">
+                        <i class="bi bi-plus-lg me-1"></i> Cadastrar Material
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-sm fw-bold">
+                        <i class="bi bi-person-plus-fill me-1"></i> Cadastrar Colaborador
+                    </a>
+                </div>
+
+                <span class="navbar-text text-light border-start ps-lg-3">
                     <i class="bi bi-person-circle me-1"></i> Operador
                 </span>
             </div>
@@ -52,7 +62,6 @@
 
     <!-- Conteúdo Principal -->
     <main class="container my-4 flex-grow-1">
-        <!-- Alertas globais ou mensagens flash podem entrar aqui -->
         @if (session()->has('message'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <i class="bi bi-check-circle-fill me-2"></i> {{ session('message') }}
@@ -60,14 +69,13 @@
             </div>
         @endif
 
-        <!-- Onde o conteúdo dos componentes Livewire será injetado -->
         {{ $slot }}
     </main>
 
     <!-- Rodapé -->
     <footer class="bg-white text-center text-muted py-3 border-top mt-auto">
         <div class="container">
-            <small>&copy; {{ date('Y') }} Sistema de Almoxarifado de Ferramentas. Desenvolvido com Laravel, Livewire e Bootstrap.</small>
+            <small>&copy; {{ date('Y') }} Sistema de Almoxarifado de Ferramentas.</small>
         </div>
     </footer>
 
